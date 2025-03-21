@@ -33,7 +33,7 @@ function Get-DotNetFrameworkVersions {
     $versions = @()
     $regPath = "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\"
     $keys = Get-ChildItem $regPath -Recurse -ErrorAction SilentlyContinue | 
-            Where-Object { $_.GetValue("Version") -ne $null }
+            Where-Object { $null -ne $_.GetValue("Version") }
     foreach ($key in $keys) {
         $versions += [PSCustomObject]@{
             Name    = "Framework: $($key.PSChildName)"

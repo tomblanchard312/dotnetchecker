@@ -1,0 +1,8 @@
+# PowerShell files
+*.ps1xml
+
+# Log files
+*.log
+
+# CSV output
+*.csv
